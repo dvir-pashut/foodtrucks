@@ -1,0 +1,39 @@
+
+services:
+  # nginx:
+  #   build: ./nginx
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - app
+    
+  app:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - es 
+
+
+  es:
+    container_name: es
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.0
+    ports:
+      -  9200:9200
+      -  9300:9300
+    environment:  
+    - discovery.type=single-node
+
+
+
+
+
+networks:
+  default:
+    name: foddtracks-net
+    external: true
+    
+    
+    
+
+
