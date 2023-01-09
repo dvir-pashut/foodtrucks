@@ -1,3 +1,5 @@
+now dockerised... the foddtrucks app and also serving the static files from an nginx fron server vith reverse proxy
+
 SF Food Trucks
 ===
 
